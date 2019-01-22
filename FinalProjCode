@@ -1,0 +1,196 @@
+
+/**
+ * @Ecarr
+ * Final project for Intro to Programming
+ * this is a multitool calculator, the ec27Calculator
+ */
+
+import java.util.Scanner;
+public class ec27Calculator
+{
+    public static void main()
+    {
+    Scanner in = new Scanner(System.in);
+    System.out.println("Welcome to the EC-27 Calculator");
+    System.out.println("There are 9 different tools");
+    System.out.println("To help with whatever you need to be calculated");
+    System.out.println("");
+    System.out.println("");
+    System.out.println("Press  1, to calculate a tip");
+    System.out.println("Press  2, to calculate tax on an item, in MA");
+    System.out.println("Press  3, to convert dollars to pounds/vice versa");
+    System.out.println("Press  4, to convert pounds to grams/vicer versa");
+    System.out.println("Press  5, to calculate the area of a Triangle");
+    System.out.println("Press  6, to convert miles to kilometers/vice versa");
+    System.out.println("Press  7, to multiply, or divide 2 numbers");
+    System.out.println("Press  8, to square a number");
+    System.out.println("Press  9, to convert celsius to farenheit/vice versa");
+    int res1=in.nextInt();
+    
+    if(res1==1)
+    {
+      System.out.print('\u000C');
+      System.out.println("Enter the final bill, # only, not the $");
+      double amountMoney=in.nextInt();
+      System.out.println("What percentage do you want to tip? Enter # only");
+      double amountTip=in.nextInt();
+      double tipDecimal=amountTip/100;
+      double finalTip=tipDecimal*amountMoney;
+      System.out.println("Your tip will be $" +finalTip);
+    }
+    
+    if(res1==2)
+    {
+      System.out.print('\u000C');
+      System.out.println("Enter the final bill, # only, not the $");
+      double finalBill=in.nextDouble();
+      double billTax=finalBill*0.0625;
+      double billTax2=billTax+finalBill;
+      System.out.println("Your final bill with tax is $" +billTax2);
+    }
+    
+    if(res1==3)
+    {
+      System.out.print('\u000C');
+      System.out.println("Press 1 to convert POUNDS to DOLLARS");
+      System.out.println("Press 2 to convert DOLLARS to POUNDS");
+      int poundRe=in.nextInt();
+      if(poundRe==1)
+      {
+          System.out.print('\u000C');
+          System.out.println("Enter amount of Pounds");
+          double numPound=in.nextDouble();
+          double numDollar=numPound*1.5936;
+          System.out.println(numPound+ " Pounds is equal to " +numDollar+ " Dollars");
+      }
+      if(poundRe==2)
+      {
+        System.out.print('\u000C');
+        System.out.println("Enter amount of Dollars");
+        double numDollars=in.nextDouble();
+        double numPounds=numDollars/1.3845;
+        System.out.println(+numDollars+ " Dollars, is equal to " +numPounds+ " Pounds");
+      }
+    }
+    
+    if(res1==4)
+    {
+      System.out.print('\u000C');
+      System.out.println("Press 1 to convert POUNDS to GRAMS");
+      System.out.println("Press 2 to convert GRAMS to POUNDS");
+      int gramR=in.nextInt();
+      if(gramR==1)
+      {
+       System.out.println("Enter the amount of Pounds");
+       double numbPounds=in.nextDouble();
+       double numGram=numbPounds*453.592;
+       System.out.println(+numbPounds+ " Pounds is equal to " +numGram+ " Grams");
+      }
+      if(gramR==2)
+      {
+        System.out.println("Enter the amount of Grams");
+        double numbGrams=in.nextDouble();
+        double numPounds=numbGrams/453.592;
+        System.out.println(+numbGrams+ " Grams is equal to " +numPounds+ " Pounds");
+      }
+    }
+    
+    if(res1==5)
+    {
+      System.out.print('\u000C');
+      System.out.println("Enter the Base length");
+      double baseL=in.nextDouble();
+      System.out.println("Enter the Height length");
+      double heightL=in.nextDouble();
+      double triArea=(baseL*heightL)/2;
+      System.out.println("The Triangle area is " +triArea);
+    }
+    
+    if(res1==6)
+    {
+      System.out.print('\u000C');
+      System.out.println("Press 1 to convert MILES to KILOMETERS");
+      System.out.println("Press 2 to convert KILOMETERS to MILES");
+      int mileR=in.nextInt();
+      if(mileR==1)
+      {
+        System.out.println("Enter the amount of Miles");
+        double numMile=in.nextDouble();
+        double numKilo=numMile*1.609;
+        System.out.println(+numMile+ " Miles is equal to " +numKilo+ " Kilometers");
+      }
+      if(mileR==2)
+      {
+        System.out.println("Enter the amount of Kilometers");
+        double numKilos=in.nextDouble();
+        double numMiles=numKilos/1.609;
+        System.out.println(+numKilos+ " Kilometers is equal to " +numMiles+ " Miles");
+      }
+    }
+    
+    if(res1==7)
+    {
+      System.out.print('\u000C');
+      System.out.println("Press 1 to MULTIPLY 2 numbers");
+      System.out.println("Press 2 to DIVIDE 2 numbers");
+      int multR=in.nextInt();
+      if(multR==1)
+      {
+        System.out.println("Enter number 1");
+        double num1=in.nextDouble();
+        System.out.println("Enter number 2");
+        double num2=in.nextDouble();
+        double finalNum=num1*num2;
+        System.out.println("The product of the numbers is " +finalNum);
+      }
+      if(multR==2)
+      {
+        System.out.println("Enter the dividend");
+        double dividend=in.nextDouble();
+        System.out.println("Enter the divisor");
+        double divisor=in.nextDouble();
+        double quotient=dividend/divisor;
+        System.out.println("The quotient of the numbers is " +quotient);
+      }
+    }
+    
+    if(res1==8)
+    {
+      System.out.print('\u000C');
+      System.out.println("Enter the number you want to square");
+      double squareNum=in.nextDouble();
+      double finalNum2=squareNum*squareNum;
+      System.out.println("The squared number is " +finalNum2);
+    }
+    
+    if(res1==9)
+    {
+      System.out.print('\u000C');
+      System.out.println("Press 1 to convert CELCIUS to FAHRENHEIT");
+      System.out.println("Press 2 to convert FAHRENHEIT to CELSIUS");
+      int fahrenR=in.nextInt();
+      if(fahrenR==1)
+      {
+        System.out.println("Enter amount of celcius");
+        double celsius=in.nextDouble();
+        double fahrenheit=(celsius * 9/5) + 32;
+        System.out.println(+celsius+ "° celsius is equal to " +fahrenheit+ "° fahrenheit");
+      }
+      if(fahrenR==2)
+      {
+        System.out.println("Enter amount of Fahrenheit");
+        double fahr2=in.nextDouble();
+        double cels2=(fahr2 - 32) * 5/9;
+        System.out.println(+fahr2+ "° fahrenheit is equal to " +cels2+ "° Celsius");
+      }
+    }
+    if(res1==10)
+    {
+      int x=1;
+      while(x==1)
+      {
+          System.out.println("You're not supposed to know about this");
+      }
+    }
+    }
+}
